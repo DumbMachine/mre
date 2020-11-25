@@ -79,8 +79,39 @@ def check_mouth_open(top_lip, bottom_lip):
         return False
 
 
-frame_count = int(cv2.VideoCapture(media_file).get(cv2.CAP_PROP_FRAME_COUNT))
-frame_no = random.randint(0, frame_count)
+def lip_structure(shape):
+    """
+    Caculate if the distance between left2mid and right2mid of lips is comparable
 
-viz(frame_no, media_file, json_file)
-print("Check the file at: ./temp.jpg")
+    In [28]: dist, dist1
+    Out[28]: (5.0, 9.219544457292889)
+    In [40]: dist, dist1
+    Out[40]: (15.132745950421555, 9.848857801796104)
+
+    """
+    import math
+    from defaults import MOUTH
+
+    x, y = shape[MOUTH["lip_left"]]
+    x1, y1 = shape[MOUTH["lip_mid_top"]]
+    x2, y2 = shape[MOUTH["lip_mid_bottom"]]
+
+    l_dist = math.hypot(x2 - x, y2 - y)
+    l_dist1 = math.hypot(x1 - x, y1 - y)
+
+    x, y = shape[MOUTH["lip_right"]]
+    x1, y1 = shape[MOUTH["lip_mid_top"]]
+    x2, y2 = shape[MOUTH["lip_mid_bottom"]]
+
+    r_dist = math.hypot(x2 - x, y2 - y)
+    r_dist1 = math.hypot(x1 - x, y1 - y)
+
+    return (l_dist + l_dist1) / (r_dist + r_dist1)
+
+
+if __name__ == "__main__":
+    frame_count = int(cv2.VideoCapture(media_file).get(cv2.CAP_PROP_FRAME_COUNT))
+    frame_no = random.randint(0, frame_count)
+
+    viz(frame_no, media_file, json_file)
+    print("Check the file at: ./temp.jpg")

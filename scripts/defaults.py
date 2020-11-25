@@ -16,3 +16,5 @@ DLIB_DESCRIPTORS = {
     "left eye": [42, 48],
     "mouth": [48, 68],
 }
+
+MOUTH = {"lip_left": 49, "lip_right": 55, "lip_mid_top": 63, "lip_mid_bottom": 67}

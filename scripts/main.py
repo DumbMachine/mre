@@ -8,6 +8,7 @@ import imageio
 import numpy as np
 
 from defaults import DETECTOR_LOC, PROCESSED_FOLDER
+from utils import lip_structure
 from tqdm import tqdm
 from glob import glob
 from imutils import face_utils
@@ -33,6 +34,7 @@ with tqdm(total=frame_count) as progress:
         rects = detector(gray, 1)
 
         frame_feature["shape"] = []
+        frame_feature["lips"] = []
         frame_feature["rects"] = [face_utils.rect_to_bb(rect) for rect in rects]
 
         for (i, rect) in enumerate(rects):
@@ -43,7 +45,9 @@ with tqdm(total=frame_count) as progress:
             face_crop = frame[y : y + h, x : x + w]
             # faces.append(face_crop)
 
-            frame_feature["shape"].append(shape.tolist())
+            shape = shape.tolist()
+            frame_feature["shape"].append(shape)
+            frame_feature["lips"].append(lip_structure(shape))
 
         file_features.append(frame_feature)
 
