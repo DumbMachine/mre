@@ -1,0 +1,4 @@
+{
+    "python.formatting.provider": "black",
+    "python.pythonPath": "/home/dumbmachine/anaconda3/bin/python"
+}
