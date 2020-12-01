@@ -2,6 +2,7 @@
 DATA_FOLDER = "../data"
 SCENES_FOLDER = "../scenes"
 PROCESSED_FOLDER = "../processed"
+CHECKED_FOLDER = "../checked"
 
 # place for some files
 DETECTOR_LOC = "../shape_predictor_68_face_landmarks.dat"

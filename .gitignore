@@ -140,4 +140,6 @@ cython_debug/
 
 data/
 scenes/
+checked/
+processed/
 shape_predictor_68_face_landmarks.dat
