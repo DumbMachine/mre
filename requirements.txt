@@ -1,3 +1,4 @@
 dlib
 numpy
 imutils
+scenedetect[opencv]
