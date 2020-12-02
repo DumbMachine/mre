@@ -4,7 +4,7 @@ import dlib
 import json
 import imutils
 import imageio
-import face_recognition
+# import face_recognition
 
 from glob import glob
 from tqdm import tqdm
