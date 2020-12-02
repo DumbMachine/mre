@@ -23,9 +23,16 @@ def scene_to_json(file):
     Process scenes and extract all the usefull information from it
 
     """
+    basename = os.path.basename(file).split(".")[0]
+
+    # skip if the file already exists
+    if os.path.exists(os.path.join(PROCESSED_FOLDER, f"{basename}.json")):
+        print(f"Skipping file {basename} as it already exists")
+        return
+
+
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(DETECTOR_LOC)
-    basename = os.path.basename(file).split(".")[0]
 
     vr = VideoReader(file, ctx=cpu(0))
 
