@@ -1,4 +1,50 @@
 {
+    "hindi": [
+        "https://www.youtube.com/watch?v=ARnzlRAdLGc",
+        "https://www.youtube.com/watch?v=oDmTAmWxj9A",
+        "https://www.youtube.com/watch?v=Op8k7gSGWmQ",
+        "https://www.youtube.com/watch?v=oHjE9JhoVGE",
+        "https://www.youtube.com/watch?v=wY1Rwa12R04",
+        "https://www.youtube.com/watch?v=iMXGhhpfj2Y",
+        "https://www.youtube.com/watch?v=7iYM7B7FEDs",
+        "https://www.youtube.com/watch?v=VMDSvwgHASM",
+        "https://www.youtube.com/watch?v=ekWY7MA-Dyc",
+        "https://www.youtube.com/watch?v=cVPVK5LdtaQ",
+        "https://www.youtube.com/watch?v=AEzUuXKcMUI",
+        "https://www.youtube.com/watch?v=DGIq6Hvv4sY",
+        "https://www.youtube.com/watch?v=zWNF3pmGz8I"
+    ],
+    "punjabi": [
+        "https://www.youtube.com/watch?v=EYk8nCDOB2g",
+        "https://www.youtube.com/watch?v=CEP8MDN1wGY",
+        "https://www.youtube.com/watch?v=qPzmZIVN08A",
+        "https://www.youtube.com/watch?v=MZ5ZPqpcNfE",
+        "https://www.youtube.com/watch?v=MLNHjf-9lU8",
+        "https://www.youtube.com/watch?v=IcJkFjCl_6c",
+        "https://www.youtube.com/watch?v=NQIy1VHndqM",
+        "https://www.youtube.com/watch?v=v_vpOmSS9nw",
+        "https://www.youtube.com/watch?v=YxySX0N6CGI",
+        "https://www.youtube.com/watch?v=JQ8ovnLaz0g",
+        "https://www.youtube.com/watch?v=K0z8bATZfto",
+        "https://www.youtube.com/watch?v=O4cJm6a8zkI",
+        "https://www.youtube.com/watch?v=eAaARuovCwU",
+        "",
+        "",
+    ],
+    "urdu": [
+        "https://www.youtube.com/watch?v=kHMLn-UV5FY",
+        "https://www.youtube.com/watch?v=7QLFOgbeE64",
+        "https://www.youtube.com/watch?v=0k5Nqp0COtM",
+        "https://www.youtube.com/watch?v=-QzQFTHKRhg",
+        "https://www.youtube.com/watch?v=SAfa0ieGWnU",
+        "https://www.youtube.com/watch?v=Uec9MTZWGXw",
+        "https://www.youtube.com/watch?v=pwI8-w4SCho",
+        "https://www.youtube.com/watch?v=2aDLMIrbq80",
+        "https://www.youtube.com/watch?v=DHp29T4o6sQ",
+        "https://www.youtube.com/watch?v=9Je1bU-HTes",
+        "https://www.youtube.com/watch?v=EAtY7h5bV04",
+        "https://www.youtube.com/watch?v=DPRzYcQJjG4"
+    ],
     "malayalam": [
         "https://www.youtube.com/watch?v=a2pqwOkTBVA",
         "https://www.youtube.com/watch?v=J4Zjh-fS76I",
@@ -45,5 +91,37 @@
         "https://www.youtube.com/watch?v=sKaJ9Pp3Ue0",
         "https://www.youtube.com/watch?v=EgxD0W2uDDk",
         "https://www.youtube.com/watch?v=Za0J3Lz9dNE"
+    ],
+    "japanese": [
+        ""
+    ],
+    "dutch": [
+        "https://www.youtube.com/watch?v=IydrYF1cdPI",
+        "https://www.youtube.com/watch?v=oMDajMXC3fs",
+        "https://www.youtube.com/watch?v=qasXp_Ux2I8",
+        "https://www.youtube.com/watch?v=Y3cx2OE6P_k",
+        "https://www.youtube.com/watch?v=Fw_j07m-l1Y",
+        "https://www.youtube.com/watch?v=qCiWMSl5UGk",
+        "https://www.youtube.com/watch?v=KHYC5wBYxuA"
+    ],
+    "czech": [
+        "https://www.youtube.com/watch?v=c4c5yfukrgc",
+        "https://www.youtube.com/watch?v=JYh6ldmHFPo",
+        "https://www.youtube.com/watch?v=tI8BAw97Yg0",
+        "https://www.youtube.com/watch?v=pZw3YqfrVt0",
+        "https://www.youtube.com/watch?v=0BQFUqEJZpw",
+        "https://www.youtube.com/watch?v=-Qc6VDDo5U0",
+        "https://www.youtube.com/watch?v=NpB6FWhGSZE",
+        "https://www.youtube.com/watch?v=SfgsKdeS9Ek",
+        "https://www.youtube.com/watch?v=NRkG67rgcAs",
+        "https://www.youtube.com/watch?v=FJZVPfR9D30",
+        "https://www.youtube.com/watch?v=xvN-VmNGiJE",
+        "https://www.youtube.com/watch?v=J_GZgOFzE-8",
+        "https://www.youtube.com/watch?v=UXxyVQnyhPU",
+        "https://www.youtube.com/watch?v=S-dqaxSTZKQ",
+        "https://www.youtube.com/watch?v=-UyE1za3w3k",
+        "https://www.youtube.com/watch?v=Awm7fKxkPJg",
+        "https://www.youtube.com/watch?v=0vmrKFMPk9I",
+        "https://www.youtube.com/watch?v=bPtFxWcUX94"
     ]
 }
