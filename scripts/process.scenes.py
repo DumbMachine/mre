@@ -7,4 +7,7 @@ files = glob(SCENES_FOLDER+"/*")
 
 
 for file in sorted(files):
-    scene_to_json(file)
+    try:
+        scene_to_json(file)
+    except:
+        pass
