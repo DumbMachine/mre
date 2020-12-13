@@ -18,15 +18,17 @@ from defaults import DETECTOR_LOC, PROCESSED_FOLDER
 
 BATCH = 50
 
-def scene_to_json(file):
+def scene_to_json(file, outfolder=None):
     """
     Process scenes and extract all the usefull information from it
 
     """
     basename = os.path.basename(file).split(".")[0]
 
+    if outfolder is None:
+        outfolder = PROCESSED_FOLDER
     # skip if the file already exists
-    if os.path.exists(os.path.join(PROCESSED_FOLDER, f"{basename}.json")):
+    if os.path.exists(os.path.join(outfolder, f"{basename}.json")):
         print(f"Skipping file {basename} as it already exists")
         return
 
@@ -72,7 +74,7 @@ def scene_to_json(file):
         "features": file_features,
     }
 
-    json.dump(save_features, open(os.path.join(PROCESSED_FOLDER, f"{basename}.json"), "w"))
+    json.dump(save_features, open(os.path.join(outfolder, f"{basename}.json"), "w"))
 
 def batch_frame_to_json(frames, detector, predictor):
     """
@@ -88,7 +90,7 @@ def batch_frame_to_json_lips(frames, detector, predictor):
     """
     file_features = []
 
-    for frame in tqdm(frames):
+    for frame in tqdm(frames, disable=True):
         frame_feature = {}
         frame = imutils.resize(frame, width=500)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -114,10 +116,3 @@ def batch_frame_to_json_lips(frames, detector, predictor):
         file_features.append(frame_feature)
 
     return file_features
-
-
-if __name__ == "__main__":
-    import sys
-
-    file = "/home/dumbmachine/experiments/mre/scenes/FIRST ARABIC VLOG _ اول ڤلوق بالعربي-X0LfSVTHKYE-Scene-003.mp4"
-    scene_to_json(file)

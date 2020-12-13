@@ -2,21 +2,57 @@
 Draw the results from .json file and the mp4
 """
 
-import os
-import cv2
 import json
+import os
 import random
+from glob import glob
+from datetime import timedelta
+
+import cv2
 import imageio
 from imutils import face_utils, resize
 
-from defaults import SCENES_FOLDER, PROCESSED_FOLDER
-from glob import glob
+from defaults import PROCESSED_FOLDER, SCENES_FOLDER, CURRENT_DOWNLOAD_PATH
 
 basename = "1-raw-Scene-002"
 
 media_file = os.path.join(SCENES_FOLDER, basename + ".mp4")
 json_file = os.path.join(PROCESSED_FOLDER, basename + ".json")
 
+
+def frame_count_to_timestamp(frame_count, fps):
+    """Convert the integer frame count to a timestamp"""
+    td = timedelta(seconds=(frame_count / fps))
+    return td
+
+
+
+def download_youtube_video(url):
+    """
+    Download the youtube video using youtube-dl
+    """
+    import subprocess 
+    FORMAT = "%(id)s-%(title)s.%(ext)s"
+    CMD = f"youtube-dl -o '{CURRENT_DOWNLOAD_PATH}/{FORMAT}' -f 18 '{url}'"
+    process_output = subprocess.check_output([CMD], shell=True)
+    # check if the download was GOOD
+    if not "[download] 100%" in process_output.decode("utf-8"):
+        raise FileNotFoundError("The file did not download")
+
+    return url
+
+
+def extract_scenes(vpath, output_folder="dataprocessing"):
+    """
+    Download the youtube video using youtube-dl
+    """
+    import subprocess 
+    CMD = f'scenedetect -i "{vpath}" detect-content split-video -o {output_folder}'
+    process_output = subprocess.check_output([CMD], shell=True)
+    # check if the download was GOOD
+    if not "\n" in process_output.decode("utf-8"):
+        raise FileNotFoundError("The file did not download")
+    return vpath
 
 def viz(frame_no, media_file, json_file):
     """Draw face on the image using the information from rect (dlib returned)"""
@@ -90,6 +126,7 @@ def lip_structure(shape):
 
     """
     import math
+
     from defaults import MOUTH
 
     x, y = shape[MOUTH["lip_left"]]
@@ -107,7 +144,6 @@ def lip_structure(shape):
     r_dist1 = math.hypot(x1 - x, y1 - y)
 
     return (l_dist + l_dist1) / (r_dist + r_dist1)
-
 
 if __name__ == "__main__":
     frame_count = int(cv2.VideoCapture(media_file).get(cv2.CAP_PROP_FRAME_COUNT))

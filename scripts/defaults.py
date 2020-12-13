@@ -1,9 +1,11 @@
 # all the main folders
 DATA_FOLDER = "../data"
 SCENES_FOLDER = "../scenes"
-PROCESSED_FOLDER = "../processed"
 CHECKED_FOLDER = "../checked"
-
+PROCESSED_FOLDER = "../processed"
+DATA_FILE_PATH = "../data/data.json"
+FSCENES_FOLDER = "../processed_scenes"
+CURRENT_DOWNLOAD_PATH  = "./dataprocessing"
 # place for some files
 DETECTOR_LOC = "../shape_predictor_68_face_landmarks.dat"
 

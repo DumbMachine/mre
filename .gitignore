@@ -141,6 +141,9 @@ cython_debug/
 data/*.mp4
 data/*.mp4.part
 scenes/
+seen_scenes/
 checked/
 processed/
+processed_scenes/
+ffmpeg
 shape_predictor_68_face_landmarks.dat
